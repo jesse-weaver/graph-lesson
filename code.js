@@ -5,18 +5,7 @@
   }
 
   function drawGraph(r, graph) {
-    if (!graph.adjacencies.length) {
-      return;
-    }
-
-    graph.adjacencies.forEach(([k1, k2], i) => {
-      const v1 = graph.vertices[k1];
-      const v2 = graph.vertices[k2];
-      const edge = graph.edges[getEdgeKey(k1, k2)];
-      r.drawLine(v1.location, v2.location, edge.color);
-      r.drawNode(v1.location, v1.color);
-      r.drawNode(v2.location, v2.color);
-    });
+    // FILL THIS OUT
   }
 
   function main() {
