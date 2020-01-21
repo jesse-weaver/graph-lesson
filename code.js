@@ -6,6 +6,36 @@
 
   function drawGraph(r, graph) {
     // FILL THIS OUT
+    const { 
+      adjacencies,
+      vertices,
+      edges,
+    } = graph;
+
+    console.log(adjacencies);
+
+    adjacencies.forEach(([vertice1, vertice2]) => {
+      // let color = colors[Math.floor(Math.random() * colors.length)];
+      console.log('vertice1', vertices[vertice1]);
+      console.log('vertice2', vertices[vertice2]);
+
+      const {
+          location: v1Point,
+          color: v1Color,
+      } = vertices[vertice1];
+
+      const {
+          location: v2Point,
+          color: v2Color,
+      } = vertices[vertice2];
+
+      const edge = edges[getEdgeKey(vertice1, vertice2)];
+      console.log(edge);
+      r.drawLine(v1Point, v2Point, edge.color);
+
+      r.drawNode(v1Point, v1Color);
+      r.drawNode(v2Point, v2Color);      
+    });
   }
 
   function main() {
